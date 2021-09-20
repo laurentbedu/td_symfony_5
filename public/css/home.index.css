@@ -1,0 +1,14 @@
+.category_globe img{
+    max-width:60px;
+}
+.category_card{
+    cursor: pointer;
+}
+
+.article{
+    max-height: 25vh;
+    cursor: pointer;
+}
+.article img{
+    max-width:20px;
+}

@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travelers.com : Blogs de globetrotters{% endblock %}
+
+{% block css %}
+<link href="/css/home.index.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row pt-2">
+        <div class="col-12 col-lg-8">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="category_globe">
+                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Afrique</h5>
+                                    <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category_landscape">
+                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="category_globe">
+                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Afrique</h5>
+                                    <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category_landscape">
+                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="category_globe">
+                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Afrique</h5>
+                                    <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category_landscape">
+                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 order-first order-lg-last">
+            <h4>Derniers Articles</h4>
+            <div class="card article pb-2" onclick="window.location='/article/1/titre_de_l_article'">
+                <div class="card-body overflow-hidden">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Titre de l'article</h5>
+                        <span>Le 15/09/21 par <a href="#">Larry</a></span>
+                        <span><img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique"> Afrique</span>
+                    </div>
+                    <p class="card-text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio exercitationem alias, vel esse quaerat dolorem voluptas optio nobis iste eius reprehenderit hic ratione ipsa aspernatur molestias quo nisi soluta ...</p>
+                </div>
+            </div>
+            <div class="card article pb-2" onclick="window.location='/article/1/titre_de_l_article'">
+                <div class="card-body overflow-hidden">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Titre de l'article</h5>
+                        <span>Le 15/09/21 par <a href="#">Larry</a></span>
+                        <span><img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique"> Afrique</span>
+                    </div>
+                    <p class="card-text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio exercitationem alias, vel esse quaerat dolorem voluptas optio nobis iste eius reprehenderit hic ratione ipsa aspernatur molestias quo nisi soluta ...</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+{% endblock %}

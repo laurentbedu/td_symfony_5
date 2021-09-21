@@ -11,60 +11,27 @@
     <div class="row pt-2">
         <div class="col-12 col-lg-8">
             <div class="row">
+                {% for category in categories %}
                 <div class="col-12 col-lg-4">
-                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
+                    <div class="card category_card ml-1 mb-2" onclick="window.location='categories/{{ category.id }}/{{ category.title }}'">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div class="category_globe">
-                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
+                                    <img src="/img/{{ category.iconPath }}" class="img-fluid" alt="En {{ category.title }}">
                                 </div>
                                 <div>
-                                    <h5 class="card-title">Afrique</h5>
+                                    <h5 class="card-title">{{ category.title }}</h5>
                                     <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
                                 </div>
                             </div>
                         </div>
                         <div class="category_landscape">
-                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
+                            <img src="/img/{{ category.imagePath }}" class="card-img-bottom" alt="En {{ category.title }}">
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="category_globe">
-                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
-                                </div>
-                                <div>
-                                    <h5 class="card-title">Afrique</h5>
-                                    <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category_landscape">
-                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card category_card ml-1" onclick="window.location='/categorie/1/afrique'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="category_globe">
-                                    <img src="/img/africa-globe.png" class="img-fluid" alt="En Afrique">
-                                </div>
-                                <div>
-                                    <h5 class="card-title">Afrique</h5>
-                                    <p class="card-text"><small class="text-muted">Dernier article le 5 sept. 2021</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="category_landscape">
-                            <img src="/img/africa-landscape.jpg" class="card-img-bottom" alt="En Afrique">
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+               
             </div>
         </div>
         <div class="col-12 col-lg-4 order-first order-lg-last">

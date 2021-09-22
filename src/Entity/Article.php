@@ -32,6 +32,16 @@ class Article
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private $published_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=UserProfil::class, inversedBy="articles")
+     */
+    private $userProfil;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -73,7 +83,34 @@ class Article
         return $this;
     }
 
+    public function getPublishedAt(): ?\DateTimeImmutable
+    {
+        return $this->published_at;
+    }
 
+    public function setPublishedAt(?\DateTimeImmutable $published_at): self
+    {
+        $this->published_at = $published_at;
+
+        return $this;
+    }
+
+    public function getUserProfil(): ?UserProfil
+    {
+        return $this->userProfil;
+    }
+
+    public function setUserProfil(?UserProfil $userProfil): self
+    {
+        $this->userProfil = $userProfil;
+
+        return $this;
+    }
+
+    public function getPublishedDateString() : ?string
+    {
+        return $this->getPublishedAt() ? $this->getPublishedAt()->format("d M. Y") : null;
+    }
 
     
 }

@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
+use App\Repository\UserProfilRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ * @ORM\Entity(repositoryClass=UserProfilRepository::class)
  */
-class Category
+class UserProfil
 {
     /**
      * @ORM\Id
@@ -22,21 +22,20 @@ class Category
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $first_name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $icon_path;
+    private $last_name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image_path;
+    private $pseudo;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
-     * @ORM\OrderBy({"published_at" = "DESC"})
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="userProfil")
      */
     private $articles;
 
@@ -45,44 +44,43 @@ class Category
         $this->articles = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->title;
+        return $this->first_name;
     }
 
-    public function setTitle(string $title): self
+    public function setFirstName(string $first_name): self
     {
-        $this->title = $title;
+        $this->first_name = $first_name;
 
         return $this;
     }
 
-    public function getIconPath(): ?string
+    public function getLastName(): ?string
     {
-        return $this->icon_path;
+        return $this->last_name;
     }
 
-    public function setIconPath(string $icon_path): self
+    public function setLastName(string $last_name): self
     {
-        $this->icon_path = $icon_path;
+        $this->last_name = $last_name;
 
         return $this;
     }
 
-    public function getImagePath(): ?string
+    public function getPseudo(): ?string
     {
-        return $this->image_path;
+        return $this->pseudo;
     }
 
-    public function setImagePath(string $image_path): self
+    public function setPseudo(string $pseudo): self
     {
-        $this->image_path = $image_path;
+        $this->pseudo = $pseudo;
 
         return $this;
     }
@@ -99,7 +97,7 @@ class Category
     {
         if (!$this->articles->contains($article)) {
             $this->articles[] = $article;
-            $article->setCategory($this);
+            $article->setUserProfil($this);
         }
 
         return $this;
@@ -109,21 +107,11 @@ class Category
     {
         if ($this->articles->removeElement($article)) {
             // set the owning side to null (unless already changed)
-            if ($article->getCategory() === $this) {
-                $article->setCategory(null);
+            if ($article->getUserProfil() === $this) {
+                $article->setUserProfil(null);
             }
         }
 
         return $this;
     }
-
-    public function getLastPublishedArticle() : ?Article
-    {
-        if(!$this->getArticles()->isEmpty() && $this->getArticles()->first()->getPublishedAt()){
-            return $this->getArticles()->first();
-        }
-        return null;
-    }
-
-    
 }

@@ -1,0 +1,12 @@
+.category_header{
+    gap: 20px;
+}
+
+.category_globe img{
+    max-width:60px;
+}
+
+.category_title{
+    font-family: 'Cassandra';
+}
+

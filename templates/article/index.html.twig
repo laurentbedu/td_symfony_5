@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travelers.com - Article : {{ article.title }}{% endblock %}
+
+{% block css %}
+<link href="/css/article.index.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="d-flex p-2 category_header">
+    <h3>{{ article.title }}</h3>
+    <div class="mt-2">par <a href="#">{{article.userProfil.pseudo}}</a></div>
+    <div class="w-25"> </div>
+    <div class="category_globe">
+        <img src="/img/{{ article.category.iconPath }}" class="img-fluid" alt="En {{ article.category.title }}">
+    </div>
+    <div class="category_title mt-2">
+        <h5>{{article.category.title}}</h5>    
+    </div>
+</div>
+<div class="p-2">
+    {{article.textContent}}
+</div>
+
+{% endblock %}

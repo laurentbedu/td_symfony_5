@@ -125,5 +125,18 @@ class Category
         return null;
     }
 
+    /**
+     * @return Collection|Article[]
+     */
+    public function getLastPublishedArticleCollection()
+    {
+        $articles = [];
+        foreach($this->getArticles() as $article){
+            if($article->getPublishedAt() !== null){
+                array_push($articles, $article);
+            }
+        }
+        return $articles;
+    }
     
 }

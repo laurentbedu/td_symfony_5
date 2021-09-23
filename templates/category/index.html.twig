@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travelers.com - Articles de la catégorie : {{ category.title }}{% endblock %}
+
+{% block css %}
+<link href="/css/category.index.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="d-flex p-2 category_header">
+        <div class="category_globe">
+            <img src="/img/{{ category.iconPath }}" class="img-fluid" alt="En {{ category.title }}">
+        </div>
+        <div class="category_title mt-3">
+            <h3>{{category.title}}</h3>    
+        </div>
+    </div>
+
+    <ul>
+        {% for article in category.getLastPublishedArticleCollection() %}
+            <li><a href="/articles/{{ article.id }}/{{ article.title|slice(0, 100) }}">{{article.title}}</a></li>
+        {% endfor %} 
+    </ul>
+
+{% endblock %}

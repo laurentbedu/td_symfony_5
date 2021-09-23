@@ -13,7 +13,7 @@
             <div class="row">
                 {% for category in categories %}
                     <div class="col-12 col-lg-4">
-                        <div class="card category_card ml-1 mb-2" onclick="window.location='categories/{{ category.id }}/{{ category.title }}'">
+                        <div class="card category_card ml-1 mb-2" onclick="window.location='/categories/{{ category.id }}/{{ category.title|slice(0, 100) }}'">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div class="category_globe">
@@ -42,7 +42,7 @@
         <div class="col-12 col-lg-4 order-first order-lg-last">
             <h4>Derniers Articles</h4>
             {% for article in articles %}
-                <div class="card article pb-2 mb-2" onclick="window.location='/article/{{ article.id }}/{{ article.title }}'">
+                <div class="card article pb-2 mb-2" onclick="window.location='/articles/{{ article.id }}/{{ article.title|slice(0, 100) }}'">
                     <div class="card-body overflow-hidden">
                         <div class="d-flex justify-content-between">
                             <h5 class="card-title">{{ article.title }}</h5>
